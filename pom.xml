@@ -18,10 +18,18 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.github.appium</groupId>
+            <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>v7.0.0</version>
+            <version>4.1.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
 
 
     </dependencies>

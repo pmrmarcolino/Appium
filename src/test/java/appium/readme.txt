@@ -1,4 +1,4 @@
-Para executar o Android Studio:
+emulatorPara executar o Android Studio:
 1. Acessar a pasta: ~/android-studio/bin
 2. Comando: ./studio.h
 ------------------------------------------------------------------------------------------------------------------------
