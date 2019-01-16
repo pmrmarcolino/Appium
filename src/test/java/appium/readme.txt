@@ -40,3 +40,8 @@ Digitar o comando:
 Digitar o comando:
 	npm install -g appium
 
+------------------------------------------------------------------------------------------------------------------------
+Para executar o uiatomator, deve ir na pasta:
+
+    Android/Sdk/tools/bin, selecionar o arquivo exec, e selecionar executar por terminal
+
