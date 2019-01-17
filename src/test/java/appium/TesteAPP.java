@@ -20,8 +20,8 @@ import java.util.concurrent.TimeUnit;
 
 public class TesteAPP {
 
-    DesiredCapabilities desiredCapabilities;
-    AndroidDriver<MobileElement> driver;
+    private DesiredCapabilities desiredCapabilities;
+    private AndroidDriver<MobileElement> driver;
 
     @Before
     public void setUp() throws MalformedURLException {
@@ -36,11 +36,11 @@ public class TesteAPP {
     }
 
     @Test
-    public void preencherFormulario() throws MalformedURLException{
+    public void preencherFormulario(){
 
         driver.findElements(By.className("android.widget.TextView")).get(1).click(); // seleciona um item da lista
 
-        driver.findElement(MobileBy.AccessibilityId("nome")).sendKeys("Wagner");;
+        driver.findElement(MobileBy.AccessibilityId("nome")).sendKeys("Wagner");
 
         driver.findElement(MobileBy.AccessibilityId("console")).click();
 
@@ -58,10 +58,10 @@ public class TesteAPP {
                 driver.findElement(By.xpath("//android.widget.TextView[@index='12']")).getAttribute("text"));
         Assert.assertEquals("Console: ps4",
                 driver.findElement(By.xpath("//android.widget.TextView[@index='13']")).getAttribute("text"));
-        Assert.assertEquals("Switch: Off",
-                driver.findElement(By.xpath("//android.widget.TextView[@index='15']")).getAttribute("text"));
-        Assert.assertEquals("Checkbox: Marcado",
-                driver.findElement(By.xpath("//android.widget.TextView[@index='16']")).getAttribute("text"));
+        Assert.assertTrue(
+                driver.findElement(By.xpath("//android.widget.TextView[starts-with(@text, 'Switch: ')]")).getText().endsWith("Off"));
+        Assert.assertTrue(
+                driver.findElement(By.xpath("//android.widget.TextView[starts-with(@text, 'Checkbox: ')]")).getText().endsWith("Marcado"));
     }
 
     @After
