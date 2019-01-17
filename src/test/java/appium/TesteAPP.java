@@ -1,27 +1,24 @@
 package appium;
 
-import appium.core.DriverFactory;
+import core.DSL;
+import core.DriverFactory;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.remote.MobileCapabilityType;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
+
 
 import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+
 
 public class TesteAPP {
 
     private AndroidDriver<MobileElement> driver;
+    private DSL dsl = new DSL();
 
     @Before
     public void inicializaAppium() throws MalformedURLException {
@@ -29,24 +26,14 @@ public class TesteAPP {
     }
 
     @Test
-    public void preencherFormulario(){
+    public void preencherFormulario() throws MalformedURLException {
+        dsl.selecionaItemLista(1);
+        dsl.escrever(MobileBy.AccessibilityId("nome"), "Wagner");
+        dsl.selecionarCombo(By.className("android.widget.Spinner"), "PS4" );
+        dsl.selecionarCheckSwitch("check");
+        dsl.selecionarCheckSwitch("switch");
+        dsl.clickBotao(By.xpath("//*[@text='SALVAR']"));
 
-
-        driver.findElements(By.className("android.widget.TextView")).get(1).click(); // seleciona um item da lista
-
-        driver.findElement(MobileBy.AccessibilityId("nome")).sendKeys("Wagner");
-
-        driver.findElement(MobileBy.AccessibilityId("console")).click();
-
-        driver.findElement(By.xpath("//android.widget.CheckedTextView[@text='PS4']")).click();
-
-        MobileElement check = driver.findElement(MobileBy.AccessibilityId("check"));
-        check.click();
-
-        MobileElement switc = driver.findElement(MobileBy.AccessibilityId("switch"));
-        switc.click();
-
-        driver.findElement(By.xpath("//*[@text='SALVAR']")).click();
 
         Assert.assertEquals("Nome: Wagner",
                 driver.findElement(By.xpath("//android.widget.TextView[@index='12']")).getAttribute("text"));
