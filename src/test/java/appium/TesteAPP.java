@@ -1,5 +1,6 @@
 package appium;
 
+import appium.core.DriverFactory;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -20,23 +21,16 @@ import java.util.concurrent.TimeUnit;
 
 public class TesteAPP {
 
-    private DesiredCapabilities desiredCapabilities;
     private AndroidDriver<MobileElement> driver;
 
     @Before
-    public void setUp() throws MalformedURLException {
-        desiredCapabilities = new DesiredCapabilities();
-
-        desiredCapabilities.setCapability("platformName", "Android");
-        desiredCapabilities.setCapability("deviceName", "emulator-555");
-        desiredCapabilities.setCapability(MobileCapabilityType.APP, "/home/usertqi/Documentos/Appium/src/test/java/resource/CTAppium-1-1.apk");
-        driver = new AndroidDriver<MobileElement>( new URL("http://localhost:4723/wd/hub"), desiredCapabilities);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+    public void inicializaAppium() throws MalformedURLException {
+        driver = DriverFactory.getDriver();
     }
 
     @Test
     public void preencherFormulario(){
+
 
         driver.findElements(By.className("android.widget.TextView")).get(1).click(); // seleciona um item da lista
 
@@ -66,7 +60,7 @@ public class TesteAPP {
 
     @After
     public void tearDown(){
-        driver.quit();
+        DriverFactory.killDriver();
     }
 }
 
