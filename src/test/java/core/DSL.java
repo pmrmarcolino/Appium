@@ -28,4 +28,10 @@ public class DSL {
     public void selecionaItemLista(Integer numero) throws MalformedURLException {
         getDriver().findElements(By.className("android.widget.TextView")).get(numero).click();
     }
+    public String buscaPorAtributo(By by, String atributo) throws MalformedURLException {
+        return getDriver().findElement(by).getAttribute(atributo);
+    }
+    public boolean buscaPorFimString(By by, String string) throws MalformedURLException {
+        return getDriver().findElement(by).getText().endsWith(string);
+    }
 }
