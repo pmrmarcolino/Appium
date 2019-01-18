@@ -1,14 +1,12 @@
 package page;
 
-import core.DSL;
+import core.BasePage;
 
 import java.net.MalformedURLException;
 
-public class MenuPage {
-
-    private DSL dsl = new DSL();
+public class MenuPage extends BasePage {
 
      public void acessarFormulario() throws MalformedURLException {
-         dsl.selecionaItemLista(1);
+         selecionaItemLista(1);
      }
 }

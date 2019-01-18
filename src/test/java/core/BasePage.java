@@ -7,9 +7,9 @@ import java.net.MalformedURLException;
 
 import static core.DriverFactory.getDriver;
 
-public class DSL {
+public class BasePage {
 
-    public void escrever(By by,String texto) throws MalformedURLException {
+    public void escrever(By by, String texto) throws MalformedURLException {
         getDriver().findElement(by).sendKeys(texto);
     }
 

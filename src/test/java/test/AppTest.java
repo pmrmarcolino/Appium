@@ -1,8 +1,6 @@
 package test;
 
-import core.DSL;
-import core.DriverFactory;
-import org.junit.After;
+import core.BaseTest;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,7 +11,7 @@ import page.MenuPage;
 import java.net.MalformedURLException;
 
 // não deve ter locators
-public class TesteAPP {
+public class AppTest extends BaseTest {
     private MenuPage menu = new MenuPage();
     private FormularioPage forms = new FormularioPage();
 
@@ -37,9 +35,5 @@ public class TesteAPP {
         Assert.assertTrue(forms.confirmaDadosGridFimString("Marcado","Checkbox"));
     }
 
-    @After
-    public void tearDown(){
-        DriverFactory.killDriver();
-    }
 }
 
