@@ -11,7 +11,7 @@ import page.MenuPage;
 import java.net.MalformedURLException;
 
 // não deve ter locators
-public class AppTest extends BaseTest {
+public class FormTest extends BaseTest {
     private MenuPage menu = new MenuPage();
     private FormularioPage forms = new FormularioPage();
 
@@ -22,7 +22,6 @@ public class AppTest extends BaseTest {
 
     @Test
     public void preencherFormulario() throws MalformedURLException {
-
         forms.escreverNome("Wagner");
         forms.selecionarCombo( "PS4" );
         forms.selecionarCheck("check");

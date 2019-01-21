@@ -1,9 +1,11 @@
 package core;
 
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
 import java.net.MalformedURLException;
+import java.util.List;
 
 import static core.DriverFactory.getDriver;
 
@@ -34,4 +36,10 @@ public class BasePage {
     public boolean buscaPorFimString(By by, String string) throws MalformedURLException {
         return getDriver().findElement(by).getText().endsWith(string);
     }
+    public boolean existeElementoPorTexto(String texto) throws MalformedURLException{
+        List<MobileElement> elemento = getDriver().findElements(By.xpath("//*[@text='"+texto+"']"));
+        return elemento.size() > 0;
+    }
+
+
 }
