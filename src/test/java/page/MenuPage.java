@@ -18,4 +18,7 @@ public class MenuPage extends BasePage {
          selecionaItemLista(5);
      }
 
+    public void acessarAbas() throws MalformedURLException {
+        selecionaItemLista(6);
+    }
 }

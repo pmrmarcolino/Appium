@@ -25,7 +25,6 @@ public class FormularioPage extends BasePage {
         clickBotao(By.xpath("//*[@text='"+botao+"']"));
     }
 
-
     public String confirmDadosGridIndex(String index) throws MalformedURLException {
         return buscaPorAtributo(By.xpath("//android.widget.TextView[@index='" + index + "']"), "text");
     }

@@ -36,6 +36,9 @@ public class BasePage {
     public boolean buscaPorFimString(By by, String string) throws MalformedURLException {
         return getDriver().findElement(by).getText().endsWith(string);
     }
+    public String pegaString(By by, String string) throws MalformedURLException {
+        return getDriver().findElement(by).getText();
+    }
     public boolean existeElementoPorTexto(String texto) throws MalformedURLException{
         List<MobileElement> elemento = getDriver().findElements(By.xpath("//*[@text='"+texto+"']"));
         return elemento.size() > 0;
