@@ -12,6 +12,6 @@ public class AbasPage extends BasePage {
     }
 
     public boolean confirmaAba(String texto)throws MalformedURLException{
-        return pegaString(By.xpath("//*[@text='"+texto+"']"), texto).endsWith(texto);
+        return existeElementoPorTexto(texto);
     }
 }
