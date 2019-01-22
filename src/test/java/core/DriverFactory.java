@@ -22,6 +22,7 @@ public class DriverFactory {
         desiredCapabilities.setCapability("deviceName", "emulator-555");
         desiredCapabilities.setCapability(MobileCapabilityType.APP,
                 "/home/usertqi/Documentos/Appium/src/test/java/resource/CTAppium-1-1.apk");
+
         driver = new AndroidDriver<MobileElement>( new URL("http://localhost:4723/wd/hub"), desiredCapabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // espera implicita: ATÉ 10 segundos.
     }

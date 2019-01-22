@@ -7,15 +7,22 @@ import java.net.MalformedURLException;
 public class MenuPage extends BasePage {
 
      public void acessarFormulario() throws MalformedURLException {
-         selecionaItemLista(1);
+         selecionaItemLista("Formulário");
      }
 
      public void acessarAlerta() throws MalformedURLException{
-         selecionaItemLista(4);
+         selecionaItemLista("Alertas");
      }
 
      public void acessarSplash() throws MalformedURLException {
-         selecionaItemLista(5);
+         selecionaItemLista("Splash");
      }
 
+    public void acessarAbas() throws MalformedURLException {
+        selecionaItemLista("Abas");
+    }
+
+    public void acessarAccordion() throws MalformedURLException {
+        selecionaItemLista("Accordion");
+    }
 }
