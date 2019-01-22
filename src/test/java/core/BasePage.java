@@ -4,6 +4,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
+import javax.lang.model.element.Element;
 import java.net.MalformedURLException;
 import java.util.List;
 
@@ -37,9 +38,16 @@ public class BasePage {
         return getDriver().findElement(by).getText().endsWith(string);
     }
 
+    public MobileElement buscaIndice(String indice) throws MalformedURLException {
+        return getDriver().findElement(By.xpath("//*[@index='"+indice+"']"));
+    }
+
     public boolean existeElementoPorTexto(String texto) throws MalformedURLException{
         List<MobileElement> elemento = getDriver().findElements(By.xpath("//*[@text='"+texto+"']"));
         return elemento.size() > 0;
+    }
+    public void findId(String id) throws MalformedURLException{
+        getDriver().findElement(By.id("android:id/"+id+"")).click();
     }
 
 

@@ -15,7 +15,6 @@ public class AbasPage extends BasePage {
         clickBotao("ABA 2");
     }
 
-
     public boolean confirmaAba(String texto)throws MalformedURLException{
         return existeElementoPorTexto(texto);
     }
