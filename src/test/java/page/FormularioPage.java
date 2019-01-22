@@ -21,8 +21,8 @@ public class FormularioPage extends BasePage {
         selecionarCheckSwitch(opcao);
     }
 
-    public void selecionarSalvar(String botao) throws MalformedURLException {
-        clickBotao(By.xpath("//*[@text='"+botao+"']"));
+    public void selecionarSalvar() throws MalformedURLException {
+        clickBotao("SALVAR");
     }
 
     public String confirmDadosGridIndex(String index) throws MalformedURLException {

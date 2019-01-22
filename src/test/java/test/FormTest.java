@@ -15,18 +15,14 @@ public class FormTest extends BaseTest {
     private MenuPage menu = new MenuPage();
     private FormularioPage forms = new FormularioPage();
 
-    @Before
-    public void inicializaAppium() throws MalformedURLException {
-        menu.acessarFormulario();
-    }
-
     @Test
     public void preencherFormulario() throws MalformedURLException {
+        menu.acessarFormulario();
         forms.escreverNome("Wagner");
         forms.selecionarCombo( "PS4" );
         forms.selecionarCheck("check");
         forms.selecionarCheck("switch");
-        forms.selecionarSalvar("SALVAR");
+        forms.selecionarSalvar();
 
         Assert.assertEquals("Nome: Wagner", forms.confirmDadosGridIndex("12"));
         Assert.assertEquals("Console: ps4",forms.confirmDadosGridIndex("13"));

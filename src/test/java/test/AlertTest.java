@@ -16,9 +16,9 @@ public class AlertTest extends BaseTest {
     @Test
     public void deveConfirmarAlerta() throws MalformedURLException {
         menu.acessarAlerta();
-        page.clicaBotao("ALERTA CONFIRM");
-        page.clicaBotao("CONFIRMAR");
-        page.verificaConfirma("Confirmado");
-        page.clicaBotao("SAIR");
+        page.clicaBotaoAlertConfirm();
+        page.clicaBotaoConfirm();
+        Assert.assertTrue(page.verificaConfirma("Confirmado"));
+        page.clicaBotaoSair();
     }
 }

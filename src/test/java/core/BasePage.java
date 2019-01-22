@@ -24,11 +24,11 @@ public class BasePage {
         getDriver().findElement(MobileBy.AccessibilityId(opcao)).click();
     }
 
-    public void clickBotao(By by) throws MalformedURLException {
-        getDriver().findElement(by).click();
+    public void clickBotao(String botao) throws MalformedURLException {
+        getDriver().findElement(By.xpath("//*[@text='"+botao+"']")).click();
     }
-    public void selecionaItemLista(Integer numero) throws MalformedURLException {
-        getDriver().findElements(By.className("android.widget.TextView")).get(numero).click();
+    public void selecionaItemLista(String menu) throws MalformedURLException {
+        getDriver().findElement(By.xpath("//*[@text='"+menu+"']")).click();
     }
     public String buscaPorAtributo(By by, String atributo) throws MalformedURLException {
         return getDriver().findElement(by).getAttribute(atributo);
@@ -36,13 +36,12 @@ public class BasePage {
     public boolean buscaPorFimString(By by, String string) throws MalformedURLException {
         return getDriver().findElement(by).getText().endsWith(string);
     }
-    public String pegaString(By by, String string) throws MalformedURLException {
-        return getDriver().findElement(by).getText();
-    }
+
     public boolean existeElementoPorTexto(String texto) throws MalformedURLException{
         List<MobileElement> elemento = getDriver().findElements(By.xpath("//*[@text='"+texto+"']"));
         return elemento.size() > 0;
     }
+
 
 
 }

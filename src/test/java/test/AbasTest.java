@@ -16,11 +16,11 @@ public class AbasTest extends BaseTest {
     @Test
     public void iteracaoComAbas() throws MalformedURLException {
         menu.acessarAbas();
-        page.clicaAba("ABA 2");
+        page.clicaAba2();
 
         Assert.assertTrue(page.confirmaAba("Este é o conteúdo da Aba 2"));
 
-        page.clicaAba("ABA 1");
+        page.clicaAba1();
 
         Assert.assertTrue(page.confirmaAba("Este é o conteúdo da Aba 1"));
     }
