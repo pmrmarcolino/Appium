@@ -2,7 +2,6 @@ package test;
 
 import core.BaseTest;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import page.FormularioPage;
 import page.MenuPage;
@@ -28,6 +27,41 @@ public class FormTest extends BaseTest {
         Assert.assertEquals("Console: ps4",forms.confirmDadosGridIndex("13"));
         Assert.assertTrue(forms.confirmaDadosGridFimString("Off", "Switch"));
         Assert.assertTrue(forms.confirmaDadosGridFimString("Marcado","Checkbox"));
+    }
+
+    @Test
+    public void datePicker() throws MalformedURLException {
+        menu.acessarFormulario();
+        forms.selecionaComponente();
+        forms.selecionaAno();
+        forms.selecionaMes();
+        forms.selecionaDia();
+        forms.confirma();
+        forms.salvarDemorado();
+
+        Assert.assertEquals("Data: 29/9/2004",forms.verificaDate());
+    }
+
+    @Test
+    public void timePicker() throws MalformedURLException {
+        menu.acessarFormulario();
+        forms.selecionaTimePicker();
+        forms.selecionaHora();
+        forms.selecionaMinuto();
+        forms.confirma();
+        forms.selecionarSalvar();
+
+        Assert.assertEquals("21:30", forms.verificaTime());
+    }
+
+    @Test
+    public void seekBar() throws MalformedURLException {
+        menu.acessarFormulario();
+        forms.selecionaSlid(0.75);
+        forms.selecionarSalvar();
+
+        Assert.assertEquals("Slider: 75", forms.verificaSlide());
+
     }
 
 }
