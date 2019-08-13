@@ -8,10 +8,10 @@ Curso de Appium-Java da Udemy
      ``` java -version ```
    
  2. Instalar Android Studio
-   * Após instalação, as configurações devem ser:
+ * Após instalação, as configurações devem ser:
        *File > Settings > Appearence & Behavior > Android SDK*
-   * Aba SDK Plataform: Selecionar o android **menor que 27**
-   * Aba SDK tools, selecionar:
+    * Aba SDK Plataform: Selecionar o android **menor que 27**
+    * Aba SDK tools, selecionar:
        - [x] Android SDK Build-tools 
        - [x] Android SDK Plataform-tools 
        - [x] Android SDK tools 
