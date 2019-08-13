@@ -15,9 +15,8 @@ Curso de Appium-Java da Udemy
        - [x] Android SDK Build-tools 
        - [x] Android SDK Plataform-tools 
        - [x] Android SDK tools 
-   * Ok 
 
-3.  Configurar Variável de ambiente ANDROID_HOME
+3.  Configurar a variável de ambiente ANDROID_HOME
   * No linux, deve digitar o comando:
   
       ``` vi ~/.bashrc ```
