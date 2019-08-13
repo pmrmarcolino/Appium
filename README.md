@@ -42,6 +42,12 @@ Curso de Appium-Java da Udemy
     ``` uiautomatorviewer ```
   
 4. Criar um novo projeto no Android Studio, e criar um novo device.
+ 
+ > Caso dê **erro**: ```/dev/kvm permission denied.``` ao gerar um emulador, execute:
+ > ```sudo apt install qemu-kvm```
+ > ```ls -al /dev/kvm``` 
+ > ```grep kvm /etc/group```, deve retornar: ```kvm:x:numero:```
+ > por fim, ```sudo adduser $USER kvm``` e reinicie a maquina.
 
   * Comando para entrar na pasta do emulador:
     
