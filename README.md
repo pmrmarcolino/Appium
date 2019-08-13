@@ -43,13 +43,13 @@ Curso de Appium-Java da Udemy
   
 4. Criar um novo projeto no Android Studio, e criar um novo device.
 
-  * Para usar o emulador sem pelo terminar, digitar:
-   
-   ```emulator -list-avds ``` 
-
   * Comando para entrar na pasta do emulador:
     
     ``` cd $ANDROID_HOME ```
+    
+  * Para usar o emulador pelo terminar, digitar:
+   
+   ``` emulator -list-avds ``` 
 
   * Na pasta tools, execute o comando para iniciar o emulador:
     
