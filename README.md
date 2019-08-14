@@ -83,9 +83,11 @@ Curso de Appium-Java da Udemy
   
    Instalar dependencias do appium, como admin:
  
- ```sudo apt-get install build-essential \```
- ```curl git m4 ruby texinfo libbz2-dev \```
- ```libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev```
+   ```sudo apt-get install build-essential \```
+   
+   ```curl git m4 ruby texinfo libbz2-dev \```
+    
+    ```libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev```
 
    Instalar o linuxbrew:
    
@@ -94,11 +96,14 @@ Curso de Appium-Java da Udemy
    Configurar as variáveis de ambiente:
    
    ```export LINUX_BREW="/home/linuxbrew/.linuxbrew/bin"```
+   
    ```export MANPATH="/home/linuxbrew/.linuxbrew/share/man"```
+   
    ```export INFOPATH="/home/linuxbrew/.linuxbrew/share/info"```
+   
    ```export PATH=$LINUX_BREW:$MANPATH:$INFPATH:...``` 
    
-   e executar:
+   Executar:
    
    ```source ~/.bashrc```
    
@@ -113,6 +118,7 @@ Curso de Appium-Java da Udemy
    Executar:
    
    ```brew node install```
+   
    ```brew unlink node && brew link node```
    
    Como admin, instalar o appium:
