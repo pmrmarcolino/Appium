@@ -61,4 +61,60 @@ Curso de Appium-Java da Udemy
     
     ``` emulator @nome_do_emulador ```
 
+5. Instalar o appium
+ * Baixar https://github.com/appium/appium-desktop ou 
+ 
+ * Pelo terminal, baixe o Node (https://nodejs.org/download/release/latest/):
+   
+   ``` cd /usr/local```
+   ``` tar --strip-components 1 -xzf /home/superman/Downloads/node-v8.2.1-linux-x64.tar.gz``` 
+   
+   Para verificar se o node foi instalado com sucesso, digitar o comando:
+   
+   ``` which node```, deve retornoar o path do node e o comando ``` node -v``` exibe a versão instalada.
+   
+   Ser instalado o npm como admin ```sudo su```:
+  
+  ``` npm install npm@latest -g```, depois executar o comando:
+  ``` npm install -g npm``` para atualizar a versão.
+ 
+   Instalar dependencias do appium, como admin:
+ 
+ ```sudo apt-get install build-essential \```
+ ```curl git m4 ruby texinfo libbz2-dev \```
+ ```libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev```
+
+   Instalar o linuxbrew:
+   
+   ```sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"```
+
+   Configurar as variáveis de ambiente:
+   
+   ```export LINUX_BREW="/home/linuxbrew/.linuxbrew/bin"```
+   ```export MANPATH="/home/linuxbrew/.linuxbrew/share/man"```
+   ```export INFOPATH="/home/linuxbrew/.linuxbrew/share/info"```
+   ```export PATH=$LINUX_BREW:$MANPATH:$INFPATH:...``` 
+   
+   e executar:
+   
+   ```source ~/.bashrc```
+   
+   Instalar linuxbrew-wrapper:
+   
+   ```sudo apt linuxbrew-wrapper```
+   
+   Instalar o gcc:
+   
+   ```brew install gcc```
+   
+   Executar:
+   
+   ```brew node install```
+   ```brew unlink node && brew link node```
+   
+   Como admin, instalar o appium:
+
+``` npm install -g appium ```, para verificar a instalação, ``` appium```
+
+
 
