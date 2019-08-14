@@ -76,10 +76,11 @@ Curso de Appium-Java da Udemy
    Ser instalado o npm como admin ```sudo su```:
   
   ``` npm install npm@latest -g```, depois executar o comando:
+  
   ``` npm install -g npm``` para atualizar a versão.
+  
   ``` sudo npm install -g web-component-tester --unsafe-perm``` para instalar alguns componetes de test
-  ``` sudo npm install -g appium --unsafe-perm=true --allow-root```
- 
+  
    Instalar dependencias do appium, como admin:
  
  ```sudo apt-get install build-essential \```
@@ -117,3 +118,6 @@ Curso de Appium-Java da Udemy
    Como admin, instalar o appium:
 
 ``` npm install -g appium ```, para verificar a instalação, ``` appium```
+
+> Se houver problema de permissionamento ``` sudo npm install -g appium --unsafe-perm=true --allow-root```
+ 
