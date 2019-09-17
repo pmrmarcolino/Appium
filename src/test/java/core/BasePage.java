@@ -53,12 +53,28 @@ public class BasePage {
         getDriver().findElement(MobileBy.AccessibilityId(acc)).click();
     }
 
+    public String findAccIdandGetext(String acc) throws MalformedURLException{
+        return getDriver().findElement(MobileBy.AccessibilityId(acc)).getText();
+    }
+
     public void tap(int x, int y) throws MalformedURLException{
         new TouchAction(getDriver()).tap(x,y).perform();
     }
 
     public String pegaTexto(String texto) throws MalformedURLException {
         return getDriver().findElement(By.xpath("//*[@text='"+texto+"']")).getText();
+    }
+
+    public void scrollAndClick(String visibleText) throws MalformedURLException {
+        String uiSelector = "new UiSelector().textMatches(\"" + visibleText + "\")";
+
+        String command =
+                "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(" + uiSelector + ");";
+
+        getDriver().findElementByAndroidUIAutomator(command).click();
+    }
+    public String obterMensagemAlerta() throws MalformedURLException {
+         return getDriver().findElement(By.id("android:id/message")).getText();
     }
 
 }

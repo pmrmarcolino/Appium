@@ -25,4 +25,13 @@ public class MenuPage extends BasePage {
     public void acessarAccordion() throws MalformedURLException {
         selecionaItemLista("Accordion");
     }
+
+    public void acessarClick() throws MalformedURLException{
+         selecionaItemLista("Cliques");
+    }
+
+    public void opcaoEscondida() throws MalformedURLException {
+        scrollAndClick("Opção bem escondida");
+    }
+
 }

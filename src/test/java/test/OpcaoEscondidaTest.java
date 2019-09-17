@@ -1,22 +1,23 @@
 package test;
 
+import core.BasePage;
 import core.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
-import page.BemEscondidaPage;
+import page.CliquePage;
 import page.MenuPage;
 
 import java.net.MalformedURLException;
 
-public class OpcaoEscondidaTest extends BaseTest {
+public class OpcaoEscondidaTest extends BasePage {
 
     MenuPage menu = new MenuPage();
-    BemEscondidaPage be = new BemEscondidaPage();
+    CliquePage clique = new CliquePage();
 
     @Test
     public void escondidaClick() throws MalformedURLException {
         menu.opcaoEscondida();
-        Assert.assertEquals("Você achou essa opção", be.obterTexto());
-        be.okClique();
+        Assert.assertEquals("Você achou essa opção", menu.obterMensagemAlerta());
+        menu.clickBotao("OK");
     }
 }

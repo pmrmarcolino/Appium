@@ -21,7 +21,7 @@ public class BaseTest {
 
     @AfterClass // é executado ao final da da execução da classe
     public static void finalizaClasse(){
-        DriverFactory.killDriver();
+        killDriver();
     }
 
     @After // é executado sempre ao final de cada método
@@ -31,7 +31,7 @@ public class BaseTest {
     }
 
     public void gerarScreenshot() throws IOException {
-        File image = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
+        File image = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(image, new File("target/screenshots/"+testName.getMethodName()+".png"));
     }
 }

@@ -20,7 +20,7 @@ import static core.DriverFactory.*;
 import static org.openqa.selenium.By.*;
 
 
-public class CliqueLongo extends BasePage {
+public class CliquePage extends BasePage {
 
     public void cliqueLongo() throws MalformedURLException {
         try {
@@ -36,6 +36,15 @@ public class CliqueLongo extends BasePage {
     }
     public String obterTextoCampo() throws MalformedURLException {
         return getDriver().findElement(xpath("(//android.widget.TextView)[3]")).getText();
+    }
+
+    public void doubleClick() throws MalformedURLException {
+        /*
+        TouchActions action = new TouchActions(getDriver());
+        MobileElement element = getDriver().findElement(xpath("//*[@text='Clique duplo']"));
+        action.doubleClick(element);
+        action.perform();*/
+        getDriver().findElement(xpath("//*[@text='Clique duplo']")).click();
     }
 
 }

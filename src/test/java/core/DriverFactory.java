@@ -3,6 +3,8 @@ package core;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.BufferedReader;
@@ -16,14 +18,23 @@ public class DriverFactory {
     private static AndroidDriver<MobileElement> driver;
 
     private static void createDriver() throws MalformedURLException {
+        AppiumServiceBuilder builder = new AppiumServiceBuilder();
+        builder.usingAnyFreePort();
+        AppiumDriverLocalService service = AppiumDriverLocalService.buildService(builder);
+        service.start();
+
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-
         desiredCapabilities.setCapability("platformName", "Android");
-        desiredCapabilities.setCapability("deviceName", "emulator-555");
+        //Com emulador
+        desiredCapabilities.setCapability("deviceName", "4200400800fc957d");
+        desiredCapabilities.setCapability("automationName", "uiautomator2");
         desiredCapabilities.setCapability(MobileCapabilityType.APP,
-                "/home/usertqi/Documentos/Appium/src/test/java/resource/CTAppium-1-1.apk");
+                "/Users/patriciamarcolino/workspace/repos/appium-course/src/test/java/resource/CTAppium-1-1.apk");
+                // Instalar o app:
+                // Liste os devices e adb install -r path
 
-        driver = new AndroidDriver<MobileElement>( new URL("http://localhost:4723/wd/hub"), desiredCapabilities);
+
+        driver = new AndroidDriver<MobileElement>(service.getUrl(), desiredCapabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // espera implicita: ATÉ 10 segundos.
     }
 
