@@ -17,7 +17,7 @@ public class FormularioPage extends BasePage {
     }
 
     public void selecionarCombo(String combo) throws MalformedURLException {
-        selecionarCombo(By.className("android.widget.Spinner"), combo );
+        selecionarComboPorTexto(By.className("android.widget.Spinner"), combo );
     }
 
     public void selecionarCheck(String opcao) throws MalformedURLException {
@@ -25,7 +25,7 @@ public class FormularioPage extends BasePage {
     }
 
     public void selecionarSalvar() throws MalformedURLException {
-        clickBotao("SALVAR");
+        clickBotaoPorTexto("SALVAR");
     }
 
     public String confirmDadosGridIndex(String index) throws MalformedURLException {
@@ -36,22 +36,22 @@ public class FormularioPage extends BasePage {
     }
 
     public void selecionaComponente() throws MalformedURLException {
-        clickBotao("01/01/2000");
+        clickBotaoPorTexto("01/01/2000");
     }
 
     public void selecionaAno() throws MalformedURLException {
-        findId("date_picker_header_year");
+        cliquePorId("date_picker_header_year");
         selecionaItemLista("2004");
     }
 
     public void confirma() throws MalformedURLException {
-        clickBotao("OK");
+        clickBotaoPorTexto("OK");
     }
 
     public void selecionaMes() throws MalformedURLException{
         int quantMeses = 7;// setembro
         while(quantMeses!=0){
-            findId("next");
+            cliquePorId("next");
             quantMeses--;
         }
     }
@@ -61,7 +61,7 @@ public class FormularioPage extends BasePage {
     }
 
     public void salvarDemorado() throws MalformedURLException {
-        clickBotao("SALVAR DEMORADO");
+        clickBotaoPorTexto("SALVAR DEMORADO");
     }
 
     public String verificaDate() throws MalformedURLException{
@@ -69,17 +69,17 @@ public class FormularioPage extends BasePage {
     }
 
     public String verificaTime() throws MalformedURLException{
-        return pegaTexto("21:30");
+        return pegaTextoPorText("21:30");
     }
 
     public void selecionaTimePicker() throws MalformedURLException {
-        clickBotao("06:00");
+        clickBotaoPorTexto("06:00");
     }
     public  void selecionaHora() throws MalformedURLException{
-        findAccId("21");
+        cliquePorAccId("21");
     }
     public void selecionaMinuto() throws MalformedURLException{
-        findAccId("30");
+        cliquePorAccId("30");
     }
 
     public void selecionaSlid(double posicao) throws MalformedURLException{

@@ -33,5 +33,13 @@ public class MenuPage extends BasePage {
     public void opcaoEscondida() throws MalformedURLException {
         scrollAndClick("Opção bem escondida");
     }
+    
+    public void swipeMenu() throws MalformedURLException {
+         scrollAndClick("Swipe");
+    }
+
+    public void swipeList() throws MalformedURLException {
+         scrollAndClick("Swipe List");
+    }
 
 }

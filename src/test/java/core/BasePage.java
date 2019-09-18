@@ -4,6 +4,10 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.touch.TouchActions;
+
+import javax.xml.datatype.Duration;
 import java.net.MalformedURLException;
 import java.util.List;
 
@@ -15,7 +19,7 @@ public class BasePage {
         getDriver().findElement(by).sendKeys(texto);
     }
 
-    public void selecionarCombo(By classe, String opcao) throws MalformedURLException {
+    public void selecionarComboPorTexto(By classe, String opcao) throws MalformedURLException {
         getDriver().findElement(classe).click();
         getDriver().findElement(By.xpath("//*[@text='"+opcao+"']")).click();
     }
@@ -24,7 +28,7 @@ public class BasePage {
         getDriver().findElement(MobileBy.AccessibilityId(opcao)).click();
     }
 
-    public void clickBotao(String botao) throws MalformedURLException {
+    public void clickBotaoPorTexto(String botao) throws MalformedURLException {
         getDriver().findElement(By.xpath("//*[@text='"+botao+"']")).click();
     }
     public void selecionaItemLista(String menu) throws MalformedURLException {
@@ -45,36 +49,63 @@ public class BasePage {
         List<MobileElement> elemento = getDriver().findElements(By.xpath("//*[@text='"+texto+"']"));
         return elemento.size() > 0;
     }
-    public void findId(String id) throws MalformedURLException{
+    public void cliquePorId(String id) throws MalformedURLException{
         getDriver().findElement(By.id("android:id/"+id+"")).click();
     }
 
-    public void findAccId(String acc) throws MalformedURLException{
+    public void cliquePorAccId(String acc) throws MalformedURLException{
         getDriver().findElement(MobileBy.AccessibilityId(acc)).click();
     }
 
-    public String findAccIdandGetext(String acc) throws MalformedURLException{
-        return getDriver().findElement(MobileBy.AccessibilityId(acc)).getText();
-    }
 
     public void tap(int x, int y) throws MalformedURLException{
         new TouchAction(getDriver()).tap(x,y).perform();
     }
 
-    public String pegaTexto(String texto) throws MalformedURLException {
+    public String pegaTextoPorText(String texto) throws MalformedURLException {
         return getDriver().findElement(By.xpath("//*[@text='"+texto+"']")).getText();
+    }
+
+    public MobileElement obterPorTexto(String texto) throws MalformedURLException {
+         return getDriver().findElement(By.xpath("//*[@text='"+texto+"']/"));
     }
 
     public void scrollAndClick(String visibleText) throws MalformedURLException {
         String uiSelector = "new UiSelector().textMatches(\"" + visibleText + "\")";
 
         String command =
-                "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(" + uiSelector + ");";
+                "new UiScrollable(new UiSelector()).scrollIntoView(" + uiSelector + ");";
 
         getDriver().findElementByAndroidUIAutomator(command).click();
     }
-    public String obterMensagemAlerta() throws MalformedURLException {
+    public String obterMensagemAlertaPorId() throws MalformedURLException {
          return getDriver().findElement(By.id("android:id/message")).getText();
     }
+    public void swipeAteEncontrarTexto(String visibleText) throws MalformedURLException {
+        String uiSelector = "new UiSelector().textMatches(\"" + visibleText + "\")";
 
+        String command =
+                "new UiScrollable(new UiSelector()).setAsHorizontalList().scrollIntoView(" + uiSelector + ");";
+
+        getDriver().findElementByAndroidUIAutomator(command);
+    }
+
+    public void swipeElemento(MobileElement elemento, double inicio, double fim) throws MalformedURLException {
+        int y = elemento.getLocation().y + (elemento.getSize().height/2);
+
+        int start_x = (int) (elemento.getSize().width*inicio);
+        int end_x = (int) (elemento.getSize().width*fim);
+
+        new TouchAction(getDriver())
+                .press(start_x,y)
+                .waitAction(5000)
+                .moveTo(end_x,y)
+                .release()
+                .perform();
+    }
+
+
+    public String obterTextoPorClasse() throws MalformedURLException {
+        return getDriver().findElement(By.className("android.widget.TextView")).getText();
+    }
 }
