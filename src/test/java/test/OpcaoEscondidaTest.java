@@ -13,7 +13,7 @@ public class OpcaoEscondidaTest extends BasePage {
 
     @Test
     public void escondidaClick() throws MalformedURLException {
-        menu.opcaoEscondida();
+        menu.acessarOpcaoEscondida();
         Assert.assertEquals("Você achou essa opção", menu.obterMensagemAlertaPorId());
         menu.clickBotaoPorTexto("OK");
     }
