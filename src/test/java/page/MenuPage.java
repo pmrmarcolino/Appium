@@ -30,16 +30,20 @@ public class MenuPage extends BasePage {
          selecionaItemLista("Cliques");
     }
 
-    public void opcaoEscondida() throws MalformedURLException {
+    public void acessarOpcaoEscondida() throws MalformedURLException {
         scrollAndClick("Opção bem escondida");
     }
     
-    public void swipeMenu() throws MalformedURLException {
+    public void acessarSwipe() throws MalformedURLException {
          scrollAndClick("Swipe");
     }
 
-    public void swipeList() throws MalformedURLException {
+    public void acessarSwipeList() throws MalformedURLException {
          scrollAndClick("Swipe List");
+    }
+
+    public void acessarWebView() throws MalformedURLException {
+         selecionaItemLista("SeuBarriga Híbrido");
     }
 
 }
