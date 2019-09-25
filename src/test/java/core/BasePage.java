@@ -12,6 +12,7 @@ import java.net.MalformedURLException;
 import java.util.List;
 
 import static core.DriverFactory.getDriver;
+import static core.DriverFactory.getTestObjectDriver;
 
 public class BasePage {
 

@@ -27,11 +27,13 @@ public class BaseTest {
     @After // é executado sempre ao final de cada método
     public void tearDown() throws IOException {
         gerarScreenshot();
-        getDriver().resetApp(); // para não matar a sessão do app a cada execução de métodos de teste
+        //getDriver().resetApp();
+        getTestObjectDriver().resetApp(); // para não matar a sessão do app a cada execução de métodos de teste
     }
 
     public void gerarScreenshot() throws IOException {
-        File image = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+        //File image = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+        File image = ((TakesScreenshot) getTestObjectDriver()).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(image, new File("target/screenshots/"+testName.getMethodName()+".png"));
     }
 }

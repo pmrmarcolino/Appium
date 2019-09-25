@@ -1,8 +1,12 @@
 package page;
 
 import core.BasePage;
+import org.openqa.selenium.By;
 
 import java.net.MalformedURLException;
+
+import static core.DriverFactory.getDriver;
+import static core.DriverFactory.getTestObjectDriver;
 
 public class MenuPage extends BasePage {
 
@@ -44,6 +48,14 @@ public class MenuPage extends BasePage {
 
     public void acessarWebView() throws MalformedURLException {
          selecionaItemLista("SeuBarriga Híbrido");
+    }
+
+    public void acessarAbaCloud(){
+        try {
+            getTestObjectDriver().findElement(By.xpath("//*[@text='Abas']")).click();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 
 }
