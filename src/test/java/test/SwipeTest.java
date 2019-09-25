@@ -14,7 +14,7 @@ public class SwipeTest extends BaseTest {
 
     @Test
     public void swipeTest() throws MalformedURLException {
-        menu.swipeMenu();
+        menu.acessarSwipe();
         swipe.scrollVertical("Chegar até o fim!");
         swipe.cliqueVoltar();
         swipe.cliqueVoltar();

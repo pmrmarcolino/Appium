@@ -14,7 +14,7 @@ public class SwipeListTest {
     @Test
     public void swipeTest() throws MalformedURLException {
 
-        menu.swipeList();
+        menu.acessarSwipeList();
         swipe.obterOpcaoDir("Opção 1");
         swipe.clickMais();
         Assert.assertTrue(swipe.existeElementoPorTexto("Opção 1 (+)"));
