@@ -22,6 +22,18 @@ public class WebViewPage extends BasePage {
         getDriver().findElement(By.id("email")).sendKeys(valor);
     }
 
+    public void setSenha(String valor) throws MalformedURLException {
+        getDriver().findElement(By.id("senha")).sendKeys(valor);
+    }
+
+    public String getMensagem() throws MalformedURLException {
+        return getDriver().findElement(By.xpath("//div[@class='alert alert-success']")).getText();
+    }
+
+    public void entrar() throws MalformedURLException {
+        getDriver().findElement(By.xpath("//button[@type='submit']")).click();
+    }
+
     public void sairContextoWeb() throws MalformedURLException {
         Set<String> context =  getDriver().getContextHandles();
         getDriver().context((String) context.toArray()[0]);
