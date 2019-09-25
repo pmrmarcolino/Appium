@@ -1,7 +1,7 @@
 # appium-course
 Curso de Appium-Java da Udemy
 
-# Instalação Appium
+# Instalação Appium Ubuntu
 
 1. Instalar JDK
   * Para verificar a instalação da JDK, digitar o comando:  
