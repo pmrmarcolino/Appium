@@ -56,7 +56,7 @@ public class DriverFactory {
         desiredCapabilities.setCapability("platformName", "Android");
         desiredCapabilities.setCapability("automationName", "uiautomator2");
         desiredCapabilities.setCapability("testobject_api_key","");// inserrir chave
-        desiredCapabilities.setCapability("appiumVersion", "1.13.0");
+        //desiredCapabilities.setCapability("appiumVersion", "1.13.0");
 
         driver = new AndroidDriver<MobileElement>(
                 new URL("https://us1-manual.app.testobject.com/wd/hub"), desiredCapabilities);
